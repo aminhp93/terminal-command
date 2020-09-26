@@ -26,7 +26,7 @@
 
         [Install]
         WantedBy=multi-user.target
-    ```
+        ```
     - `sudo systemctl daemon-reload`
     - `sudo systemctl enable 2021-website.service`
     - `sudo systemctl start 2021-website`
@@ -45,7 +45,7 @@
                 proxy_pass http://localhost:3000/;
             }
         }
-    ```
+        ```
     - `sudo ln -s /etc/nginx/sites-available/2020-website /etc/nginx/sites-enabled`
     - `sudo nginx -t`
     - `sudo rm /etc/nginx/sites-enabled/default`
