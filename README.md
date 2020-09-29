@@ -50,3 +50,34 @@
     - `sudo nginx -t`
     - `sudo rm /etc/nginx/sites-enabled/default`
     - `sudo service nginx restart`
+
+
+* Server
+    - `sudo apt-get update`
+    - `sudo apt-get install nginx git python3-venv`
+
+
+* Poetry
+    - `curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3`
+    - `source $HOME/.poetry/env`
+
+* Redis
+    - Install redis in /home/ubuntu
+    - `wget http://download.redis.io/redis-stable.tar.gz`
+    - `tar xvzf redis-stable.tar.gz`
+    - `sudo apt install redis-server`
+    - `redis-server`
+
+* Postgres
+    - `sudo apt install postgresql-client-common`
+    - `sudo apt-get install postgresql-client`
+    - `sudo apt update`
+    - `sudo apt install postgresql postgresql-contrib`
+    - Access:
+        - `sudo -i -u postgres`
+        - `psql`
+        - Direct way:
+            - `sudo -u postgres psql`
+
+        - `CREATE ROLE ubuntu superuser;`
+        - `ALTER ROLE ubuntu with LOGIN;`
