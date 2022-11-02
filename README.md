@@ -1,36 +1,59 @@
 
 
-## Commands
+## System service
 
-* Change mode:
-    - `sudo chown -R $USER /var/www/2021-website`
+- Create file
 
-* System Service:
-    - `sudo nano /etc/systemd/system/2021-website.service`
-    - ```
-        [Unit]
-        Description=2021-website
-        After=syslog.target
+```
+sudo nano /etc/systemd/system/2021-website.service
+```
 
-        [Service]
-        WorkingDirectory=/var/www/2021-website/
-        ExecStart=/usr/local/bin/npm start
-        Restart=always
-        StandardInput=null
-        StandardOutput=syslog
-        StandardError=syslog
-        SyslogIdentifier=%n
-        KillMode=mixed
-        TimeoutStopSec=5
-        User=ubuntu
+- Content file
 
-        [Install]
-        WantedBy=multi-user.target
-        ```
-    - `sudo systemctl daemon-reload`
-    - `sudo systemctl enable 2021-website.service`
-    - `sudo systemctl start 2021-website`
-    - `sudo systemctl status 2021-website`
+```
+    [Unit]
+    Description=2021-website
+    After=syslog.target
+
+    [Service]
+    WorkingDirectory=/var/www/2021-website/
+    ExecStart=/usr/local/bin/npm start
+    Restart=always
+    StandardInput=null
+    StandardOutput=syslog
+    StandardError=syslog
+    SyslogIdentifier=%n
+    KillMode=mixed
+    TimeoutStopSec=5
+    User=ubuntu
+
+    [Install]
+    WantedBy=multi-user.target
+```
+
+- Reload
+
+```
+sudo systemctl daemon-reload
+```
+
+- Enable
+
+```
+sudo systemctl enable 2021-website.service
+```
+
+- Start
+
+```
+sudo systemctl start 2021-website
+```
+
+- Check status
+
+```
+sudo systemctl status 2021-website
+```
 
 
 * Nginx:
