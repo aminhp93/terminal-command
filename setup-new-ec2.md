@@ -9,7 +9,7 @@ sudo apt-get update
 - Install nginx
 
 ```
-    sudo apt-get install nginx
+sudo apt-get install nginx libpq-dev python3-dev
 ```
 
 - Install postgres
@@ -25,4 +25,12 @@ sudo apt update
 ```
 ```
 sudo apt install postgresql postgresql-contrib
+```
+
+- ubuntu error install psycopg2
+```
+sudo apt install python3-dev libpq-dev
+```
+```
+pip3 install psycopg2
 ```
