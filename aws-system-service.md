@@ -1,4 +1,4 @@
-## Server AWS System service
+## AWS System service
 
 - Create file
 
